@@ -1,0 +1,26 @@
+mod 'stdlib',
+  :git => 'git://github.com/puppetlabs/puppetlabs-stdlib.git'
+
+mod 'ssh',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/ssh'
+
+mod 'helper',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/helper'
+
+mod 'monit',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/monit'
+
+mod 'git',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/git'
+
+mod 'ruby',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/ruby'
+
+mod 'librarian_puppet',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/librarian_puppet'

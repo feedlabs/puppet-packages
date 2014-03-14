@@ -1,0 +1,11 @@
+mod 'unzip',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/unzip'
+
+mod 'helper',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/helper'
+
+mod 'cgi-fcgi',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/cgi-fcgi'

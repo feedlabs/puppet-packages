@@ -1,0 +1,7 @@
+mod 'monit',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/monit'
+
+mod 'bipbip',
+  :git => 'git@github.com:mariansollmann/puppet-packages.git',
+  :path => 'modules/bipbip'

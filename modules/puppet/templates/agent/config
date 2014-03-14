@@ -1,0 +1,5 @@
+
+[agent]
+server = <%= @server %>
+runinterval = <%= @runinterval %>
+report = true
