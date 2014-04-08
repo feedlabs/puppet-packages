@@ -1,3 +1,5 @@
+(this is copy of https://github.com/echocat/puppet-mongodb)
+
 # MongoDB module
 
 This module manages mongodb services. It provides the functions for mongod and mongos instances.

@@ -1,3 +1,5 @@
+(this is copy of https://github.com/michaeltchapman/puppet-golang)
+
 # puppet-golang #
 
 A puppet module for installing the go runtime

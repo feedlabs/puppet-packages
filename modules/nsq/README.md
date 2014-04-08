@@ -1,3 +1,5 @@
+(this is copy of https://github.com/mattheath/puppet-nsq)
+
 # NSQ Puppet Module for Boxen
 
 [![Build Status](https://travis-ci.org/boxen/puppet-nsq.png)](https://travis-ci.org/boxen/puppet-nsq)
