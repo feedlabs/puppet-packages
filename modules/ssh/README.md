@@ -4,7 +4,7 @@
 
 ```puppet
 node storage1 {
-  ssh::auth::id {'root@storage1.feedlabs.io':
+  ssh::auth::id {'root@storage1.cargomedia.ch':
     user => 'root',
   }
 }
@@ -14,12 +14,12 @@ Allow root@storage1 to login as foo or root to backup1:
 
 ```puppet
 node backup1 {
-  ssh::auth::grant {'foo@backup1.feedlabs.io for root@storage1.feedlabs.io':
-    id => 'root@storage1.feedlabs.io',
+  ssh::auth::grant {'foo@backup1.cargomedia.ch for root@storage1.cargomedia.ch':
+    id => 'root@storage1.cargomedia.ch',
     user => 'foo',
   }
-  ssh::auth::grant {'root@backup1.feedlabs.io for root@storage1.feedlabs.io':
-    id => 'root@storage1.feedlabs.io',
+  ssh::auth::grant {'root@backup1.cargomedia.ch for root@storage1.cargomedia.ch':
+    id => 'root@storage1.cargomedia.ch',
     user => 'root',
   }
 }
@@ -31,15 +31,15 @@ This is useful if multiple machines and/or users should share a common identity 
 
 ```puppet
 node storage1 {
-  ssh::auth::id {'root@storage1.feedlabs.io':
-    id => 'root@storage.feedlabs.io',
+  ssh::auth::id {'root@storage1.cargomedia.ch':
+    id => 'root@storage.cargomedia.ch',
     user => 'root',
   }
 }
 
 node storage2 {
-  ssh::auth::id {'root@storage2.feedlabs.io':
-    id => 'root@storage.feedlabs.io',
+  ssh::auth::id {'root@storage2.cargomedia.ch':
+    id => 'root@storage.cargomedia.ch',
     user => 'root',
   }
 }
@@ -48,8 +48,8 @@ node storage2 {
 Allow root on both storage1 and storage2 to login as foo to backup1:
 ```puppet
 node backup1 {
-  ssh::auth::grant {'foo@backup1.feedlabs.io for root@storage.feedlabs.io':
-    id => 'root@storage.feedlabs.io',
+  ssh::auth::grant {'foo@backup1.cargomedia.ch for root@storage.cargomedia.ch':
+    id => 'root@storage.cargomedia.ch',
     user => 'foo',
   }
 }
