@@ -1,11 +1,11 @@
-puppet-packages [![Build Status](https://travis-ci.org/cargomedia/puppet-packages.png?branch=master)](https://travis-ci.org/cargomedia/puppet-packages)
+puppet-packages [![Build Status](https://travis-ci.org/feedlabs/puppet-packages.png?branch=master)](https://travis-ci.org/feedlabs/puppet-packages)
 ===============
 Reusable puppet modules for Debian Wheezy.
 
 Install puppet
 --------------
 ```sh
-curl -Ls https://raw.github.com/cargomedia/puppet-packages/master/scripts/puppet-install.sh | bash
+curl -Ls https://raw.github.com/feedlabs/puppet-packages/master/scripts/puppet-install.sh | bash
 ```
 
 Initial puppet run

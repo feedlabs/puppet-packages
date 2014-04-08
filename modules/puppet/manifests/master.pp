@@ -7,7 +7,7 @@ class puppet::master (
   $puppetdb_port_ssl = 8081,
   $bootstrap_classes = [
     'puppet::agent',
-    'monit' # See https://github.com/cargomedia/puppet-packages/issues/232
+    'monit' # See https://github.com/feedlabs/puppet-packages/issues/232
   ],
   $puppetfile = undef,
   $port_webrick = 8140,

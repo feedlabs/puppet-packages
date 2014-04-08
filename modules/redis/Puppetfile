@@ -1,15 +1,15 @@
-mod 'cargomedia/build',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/build',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/build'
 
-mod 'cargomedia/helper',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/helper',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/helper'
 
-mod 'cargomedia/monit',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/monit',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/monit'
 
-mod 'cargomedia/bipbip',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/bipbip',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/bipbip'

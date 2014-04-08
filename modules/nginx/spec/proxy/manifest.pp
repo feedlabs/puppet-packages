@@ -60,7 +60,7 @@ z5jiDSPskspb8TxB7mD/QtGd/K2UAhECw0n+dET8t9mzsHp5aqYeyMs=
     access_log            => 'off',
   }
 
-  nginx::resource::vhost {'staging.cargomedia.ch':
+  nginx::resource::vhost {'staging.feedlabs.io':
     ensure            => present,
     listen_port       => '8090',
     proxy             => 'http://backend-socketredis',

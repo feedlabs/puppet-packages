@@ -17,6 +17,6 @@ Vagrant.configure('2') do |config|
   end
 
   config.vm.define 'wheezy', primary: true do |wheezy|
-    wheezy.vm.box = 'cargomedia/debian-7-amd64-default'
+    wheezy.vm.box = 'feedlabs/debian-7-amd64-default'
   end
 end

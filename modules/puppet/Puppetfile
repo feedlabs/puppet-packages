@@ -1,34 +1,34 @@
-mod 'cargomedia/stdlib',
+mod 'feedlabs/stdlib',
   :git => 'git://github.com/puppetlabs/puppetlabs-stdlib.git'
 
-mod 'cargomedia/ssh',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/ssh',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/ssh'
 
-mod 'cargomedia/helper',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/helper',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/helper'
 
-mod 'cargomedia/monit',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/monit',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/monit'
 
-mod 'cargomedia/git',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/git',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/git'
 
-mod 'cargomedia/ruby',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/ruby',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/ruby'
 
-mod 'cargomedia/librarian_puppet',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/librarian_puppet',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/librarian_puppet'
 
-mod 'cargomedia/passenger',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/passenger',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/passenger'
 
-mod 'cargomedia/apache2',
-  :git => 'git@github.com:cargomedia/puppet-packages.git',
+mod 'feedlabs/apache2',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/apache2'
