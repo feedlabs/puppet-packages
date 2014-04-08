@@ -1,4 +1,0 @@
-check process neo4j with pidfile /var/lib/neo4j/data/neo4j-service.pid
-    start program = "/var/lib/neo4j/bin/neo4j start"
-    stop program = "/var/lib/neo4j/bin/neo4j stop"
-    if 25 restarts within 50 cycles then timeout
