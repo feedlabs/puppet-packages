@@ -1,4 +1,4 @@
-class feedlabs-cfp (
+define feedlabs-cfp (
   $version = '0.0.1',
   $configuration = []
 ) {
