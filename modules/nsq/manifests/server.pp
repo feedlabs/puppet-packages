@@ -9,6 +9,11 @@ class nsq::server (
   require 'nsq'
 
   file {
+    '/etc/nsq':
+      ensure => directory,
+      mode => 644,
+      owner => 'nsq';
+
     '/etc/nsq/nsqd.conf':
       ensure => file,
       content => template('nsq/nsqd/conf'),
