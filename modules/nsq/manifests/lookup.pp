@@ -6,7 +6,7 @@ class nsq::lookup (
   $tcp_port     = '14160'
 ) {
 
-  require 'nsq'
+  include 'nsq'
 
   file {
     '/etc/nsq':

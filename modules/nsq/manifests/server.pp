@@ -7,7 +7,7 @@ class nsq::server (
   $lookupd_tcp_address = []
 ) {
 
-  require 'nsq'
+  include 'nsq'
 
   file {
     '/etc/nsq':
