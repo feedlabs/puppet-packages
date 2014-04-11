@@ -11,9 +11,12 @@
 NAME=nsqd
 DAEMON=/usr/local/bin/nsqd
 PIDFILE=/var/run/nsqd.pid
+LOGDIR=/var/log/nsqd
 DAEMON_ARGS="-config /etc/nsq/nsqd.conf"
 
-# If the daemon is not there, then exit.
+set -e
+. /lib/lsb/init-functions
+
 test -x $DAEMON || exit 5
 
 case $1 in
