@@ -4,7 +4,7 @@ class nsq::server (
   $http_port    = '4151',
   $tcp_address  = '0.0.0.0',
   $tcp_port     = '4150',
-  $lookupd_tcp_address = []
+  $nsqlookupd_tcp_addresses = []
 ) {
 
   include 'nsq'
