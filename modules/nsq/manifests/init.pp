@@ -14,7 +14,7 @@ class nsq (
 
   helper::script {'install nsq':
     content => template('nsq/install.sh'),
-    unless => "test -x /usr/bin/nsqd && /usr/bin/nsqd -version | grep '^v${version}$'",
+    unless => "test -x /usr/bin/nsqd && /usr/bin/nsqd -version | grep 'v${version}'",
     require => User['nsq'],
     timeout => 900,
   }
