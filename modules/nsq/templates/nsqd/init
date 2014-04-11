@@ -8,38 +8,25 @@
 # Description:			  NSQ server
 ### END INIT INFO
 
-# Using the lsb functions to perform the operations.
-. /lib/lsb/init-functions
-# Process name ( For display )
 NAME=nsqd
-# Daemon name, where is the actual executable
 DAEMON=/usr/local/bin/nsqd
-# pid file for the daemon
 PIDFILE=/var/run/nsqd.pid
-LOGDIR=/var/log/nsqd
 DAEMON_ARGS="-config /etc/nsq/nsqd.conf"
-USER=nsq
 
 # If the daemon is not there, then exit.
 test -x $DAEMON || exit 5
 
 case $1 in
  start)
-  # Checked the PID file exists and check the actual status of process
   if [ -e $PIDFILE ]; then
    status_of_proc -p $PIDFILE $DAEMON "$NAME process" && status="0" || status="$?"
-   # If the status is SUCCESS then don't need to start again.
    if [ $status = "0" ]; then
     exit # Exit
    fi
   fi
   # Start the daemon.
   log_daemon_msg "Starting the process" "$NAME"
-  # Start the daemon with the help of start-stop-daemon
-  # Log the message appropriately
-  mkdir -p ${LOGDIR}
-  chown ${USER} ${LOGDIR}
-  if start-stop-daemon --start --quiet --oknodo --pidfile $PIDFILE --make-pidfile --background  --exec $DAEMON --chuid $USER -- $DAEMON_ARGS; then
+  if start-stop-daemon --start --quiet --oknodo --pidfile $PIDFILE --make-pidfile --background  --exec $DAEMON -- $DAEMON_ARGS; then
    log_end_msg 0
   else
    log_end_msg 1
