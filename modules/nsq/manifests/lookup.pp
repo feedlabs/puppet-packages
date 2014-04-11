@@ -8,17 +8,11 @@ class nsq::lookup (
 
   include 'nsq'
 
-  file {
-    '/etc/nsq':
-      ensure => directory,
-      mode => 644,
-      owner => 'nsq';
-
-    '/etc/nsq/nsqlookupd.conf':
-      ensure => file,
-      content => template('nsq/nsqlookupd/conf'),
-      mode => 644,
-      owner => 'nsq';
+  file {'/etc/nsq/nsqlookupd.conf':
+    ensure => file,
+    content => template('nsq/nsqlookupd/conf'),
+    mode => 644,
+    owner => 'nsq',
   }
 
   file {'/etc/init.d/nsqlooupd':

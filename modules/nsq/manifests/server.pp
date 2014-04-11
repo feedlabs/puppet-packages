@@ -9,17 +9,11 @@ class nsq::server (
 
   include 'nsq'
 
-  file {
-    '/etc/nsq':
-      ensure => directory,
-      mode => 644,
-      owner => 'nsq';
-
-    '/etc/nsq/nsqd.conf':
-      ensure => file,
-      content => template('nsq/nsqd/conf'),
-      mode => 644,
-      owner => 'nsq';
+  file {'/etc/nsq/nsqd.conf':
+    ensure => file,
+    content => template('nsq/nsqd/conf'),
+    mode => 644,
+    owner => 'nsq',
   }
 
   file {'/etc/init.d/nsqd':
