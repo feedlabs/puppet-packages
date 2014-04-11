@@ -8,10 +8,25 @@ class nsq::server (
 
   require 'nsq'
 
-  # config files
+  file {'/etc/nsq/nsqd.conf':
+    ensure => file,
+    content => template('nsq/nsqd/conf'),
+    mode => 644,
+    user => 'nsq',
+  }
 
-  # service
+  file {'/etc/init.d/nsqd':
+    ensure => file,
+    content => template('nsq/nsqd/init'),
+    mode => 755,
+    owner => 'nsq'
+  }
 
-  # monit
+  service {'nsqd': }
+
+  @monit::entry {'nsqd':
+    content => template('nsq/nsqd/monit'),
+    require => Service['nsqd'],
+  }
 
 }
