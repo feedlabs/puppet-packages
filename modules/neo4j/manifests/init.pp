@@ -3,6 +3,9 @@ class neo4j(
   $version     = '2.0.0-M04',
   $install_dir = '/opt/neo4j',
 ) {
+
+  require 'java7'
+
   $dirname  = "neo4j-${edition}-${version}"
   $filename = "${dirname}-unix.tar.gz"
 

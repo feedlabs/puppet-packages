@@ -1,7 +1,7 @@
 define feedlabs-fdn (
   $version = '0.0.1',
   $host = '127.0.0.1',
-  $port = '22001',
+  $port = '22002',
   $configuration = []
   $nsq_config = []
 ) {
