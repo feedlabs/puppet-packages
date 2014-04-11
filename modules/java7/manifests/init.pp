@@ -6,7 +6,7 @@ class java7 {
       'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main'
     ],
     keys => {
-      'mongodb' => {
+      'webupd8team' => {
         'key' => 'EEA14886',
         'key_server' => 'keyserver.ubuntu.com',
       }
