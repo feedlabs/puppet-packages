@@ -1,0 +1,3 @@
+mod 'feedlabs/helper',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
+  :path => 'modules/helper'
