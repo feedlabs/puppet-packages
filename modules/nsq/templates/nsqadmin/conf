@@ -1,4 +1,3 @@
 http_address="<%= @address %>:<%= @port %>"
-<% @lookupd_http_address.each do |server| -%>
-lookupd_http_address="<%= server %>"
-<% end %>
+nsqd_http_addresses="<%= nsqd_http_addresses.join(',') %>"
+nsqlookupd_http_addresses="<%= nsqlookupd_http_addresses.join(',') %>"
