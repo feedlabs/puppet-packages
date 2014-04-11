@@ -18,11 +18,5 @@ class nsq (
     require => User['nsq'],
     timeout => 900,
   }
-  # installation
 
-  # config files
-
-  # service
-
-  # monit
 }

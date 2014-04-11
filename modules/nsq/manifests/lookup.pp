@@ -6,4 +6,12 @@ class nsq::lookup (
   $tcp_port     = '14160'
 ) {
 
+  require 'nsq'
+
+  # config files
+
+  # service
+
+  # monit
+
 }

@@ -4,4 +4,12 @@ class nsq::admin (
   $port    = '14171'
 ) {
 
+  require 'nsq'
+
+  # config files
+
+  # service
+
+  # monit
+
 }

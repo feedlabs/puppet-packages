@@ -6,4 +6,12 @@ class nsq::server (
   $tcp_port     = '14150'
 ) {
 
+  require 'nsq'
+
+  # config files
+
+  # service
+
+  # monit
+
 }
