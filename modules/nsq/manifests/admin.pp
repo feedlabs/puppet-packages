@@ -1,16 +1,40 @@
 class nsq::admin (
   $version = '0.2.27',
   $address = '0.0.0.0',
-  $port    = '14171',
-  $lookupd_tcp_address = []
+  $port    = '4171',
+  $nsqd_http_address = [],
+  $lookupd_http_address = []
 ) {
 
-  require 'nsq'
+  include 'nsq'
 
-  # config files
+  file {'/etc/nsq/nsqadmin.conf':
+    ensure => file,
+    content => template('nsq/nsqadmin/conf'),
+    mode => 644,
+    owner => 'nsq',
+  }
 
-  # service
+  file {'/etc/init.d/nsqadmin':
+    ensure => file,
+    content => template('nsq/nsqadmin/init'),
+    mode => 755,
+    owner => '0',
+    group => '0',
+    notify => Service['nsqadmin'],
+  }
+  ~>
 
-  # monit
+  exec {'update-rc.d nsqadmin defaults  && /etc/init.d/nsqadmin start':
+    path => ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'],
+    refreshonly => true,
+  }
+
+  service {'nsqadmin': }
+
+  @monit::entry {'nsqadmin':
+    content => template('nsq/nsqadmin/monit'),
+    require => Service['nsqadmin'],
+  }
 
 }

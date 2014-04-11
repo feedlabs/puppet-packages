@@ -1,0 +1,4 @@
+http_address="<%= @address %>:<%= @port %>"
+<% @lookupd_http_address.each do |server| -%>
+lookupd_http_address="<%= server %>"
+<% end %>
