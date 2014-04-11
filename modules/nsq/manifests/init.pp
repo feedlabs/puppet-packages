@@ -12,6 +12,12 @@ class nsq (
     system => true,
   }
 
+  file {'/etc/nsq':
+    ensure => directory,
+    owner => 'nsq',
+    mode => 644,
+  }
+
   helper::script {'install nsq':
     content => template('nsq/install.sh'),
     unless => "test -x /usr/local/bin/nsqd && /usr/local/bin/nsqd -version | grep 'v${version}'",
