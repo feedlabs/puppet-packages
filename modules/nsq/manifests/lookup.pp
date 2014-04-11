@@ -15,7 +15,7 @@ class nsq::lookup (
     owner => 'nsq',
   }
 
-  file {'/etc/init.d/nsqlooupd':
+  file {'/etc/init.d/nsqlookupd':
     ensure => file,
     content => template('nsq/nsqlookupd/init'),
     mode => 755,
