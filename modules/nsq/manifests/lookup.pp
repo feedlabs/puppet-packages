@@ -8,10 +8,39 @@ class nsq::lookup (
 
   require 'nsq'
 
-  # config files
+  file {
+    '/etc/nsq':
+      ensure => directory,
+      mode => 644,
+      owner => 'nsq';
 
-  # service
+    '/etc/nsq/nsqlookupd.conf':
+      ensure => file,
+      content => template('nsq/nsqlookupd/conf'),
+      mode => 644,
+      owner => 'nsq';
+  }
 
-  # monit
+  file {'/etc/init.d/nsqlooupd':
+    ensure => file,
+    content => template('nsq/nsqlookupd/init'),
+    mode => 755,
+    owner => '0',
+    group => '0',
+    notify => Service['nsqlookupd'],
+  }
+  ~>
+
+  exec {'update-rc.d nsqlookupd defaults  && /etc/init.d/nsqlookupd start':
+    path => ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'],
+    refreshonly => true,
+  }
+
+  service {'nsqlookupd': }
+
+  @monit::entry {'nsqlookupd':
+    content => template('nsq/nsqlookupd/monit'),
+    require => Service['nsqlookupd'],
+  }
 
 }

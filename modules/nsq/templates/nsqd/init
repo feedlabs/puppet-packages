@@ -5,13 +5,12 @@
 # Default-Start:		  2 3 4 5
 # Default-Stop:			  0 1 6
 # Short-Description:	nsqd
-# Description:			  NSQ server
+# Description:			  NSQ Server
 ### END INIT INFO
 
 NAME=nsqd
 DAEMON=/usr/local/bin/nsqd
 PIDFILE=/var/run/nsqd.pid
-LOGDIR=/var/log/nsqd
 DAEMON_ARGS="-config /etc/nsq/nsqd.conf"
 
 set -e
