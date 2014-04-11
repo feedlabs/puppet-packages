@@ -1,7 +1,7 @@
 class neo4j(
   $edition     = 'community',
   $version     = '2.0.0-M04',
-  $install_dir = '/opt/neo4j',
+  $install_dir = '/opt/neo4j'
 ) {
 
   require 'java7'
