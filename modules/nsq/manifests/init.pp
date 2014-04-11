@@ -7,6 +7,17 @@ class nsq (
   $template_dir = '/usr/local/share/nsqadmin/templates'
 ) {
 
+  user {'nsq':
+    ensure => present,
+    system => true,
+  }
+
+  helper::script {'install nsq':
+    content => template('nsq/install.sh'),
+    unless => "test -x /usr/bin/nsqd && /usr/bin/nsqd -version | grep '^v${version}$'",
+    require => User['nsq'],
+    timeout => 900,
+  }
   # installation
 
   # config files
