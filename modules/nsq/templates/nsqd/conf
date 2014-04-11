@@ -1,2 +1,5 @@
 http_address="<%= @http_address %>:<%= @http_port %>"
 tcp_address="<%= @tcp_address %>:<%= @tcp_port %>"
+<% @lookupd_tcp_address.each do |server| -%>
+lookupd_tcp_address="<%= server %>"
+<% end %>
