@@ -8,18 +8,18 @@ class nsq::server (
 
   require 'nsq'
 
-  file {'/etc/nsq/nsqd.conf':
-    ensure => file,
-    content => template('nsq/nsqd/conf'),
-    mode => 644,
-    user => 'nsq',
-  }
+  file {
+    '/etc/nsq/nsqd.conf':
+      ensure => file,
+      content => template('nsq/nsqd/conf'),
+      mode => 644,
+      owner => 'nsq';
 
-  file {'/etc/init.d/nsqd':
-    ensure => file,
-    content => template('nsq/nsqd/init'),
-    mode => 755,
-    owner => 'nsq'
+    '/etc/init.d/nsqd':
+      ensure => file,
+      content => template('nsq/nsqd/init'),
+      mode => 755,
+      owner => 'nsq';
   }
 
   service {'nsqd': }
