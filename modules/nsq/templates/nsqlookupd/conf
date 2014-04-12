@@ -1,2 +1,0 @@
-http_address="<%= @http_address %>:<%= @http_port %>"
-tcp_address="<%= @tcp_address %>:<%= @tcp_port %>"
