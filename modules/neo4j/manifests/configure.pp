@@ -1,4 +1,4 @@
-class neo4j::configure(
+class neo4j::configure (
   $install_dir
 ) {
 
@@ -9,4 +9,5 @@ class neo4j::configure(
     path    => '/bin',
     notify  => Service['neo4j-service'],
   }
+
 }
