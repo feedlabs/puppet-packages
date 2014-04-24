@@ -6,7 +6,7 @@ describe user('neo4j') do
 end
 
 describe package('openjdk-7-jre') do
-  it { should be_installed.by('apt').with_version('2.6.0') }
+  it { should be_installed.by('apt') }
 end
 
 describe service('neo4j-service') do
