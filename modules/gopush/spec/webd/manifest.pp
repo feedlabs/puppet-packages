@@ -1,7 +1,7 @@
 node default {
 
-  gopush::core::webd {'server':
-    port => 28017
+  gopush::core::webd {'web':
+    port => 8081
   }
 
 }
