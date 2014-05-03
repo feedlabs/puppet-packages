@@ -1,5 +1,3 @@
-(this is copy of https://github.com/cargomedia/puppet-packages)
-
 puppet-packages [![Build Status](https://travis-ci.org/feedlabs/puppet-packages.png?branch=master)](https://travis-ci.org/feedlabs/puppet-packages)
 ===============
 Reusable puppet modules for Debian Wheezy.
