@@ -38,3 +38,7 @@ Our test tasks recognize following rake options:
 - `verbose=true` verbose output
 - `debug=true` running puppet apply with `--debug` flag
 - `keep_box=true` do not roll back the vm to a clean state
+
+# License
+
+MIT
