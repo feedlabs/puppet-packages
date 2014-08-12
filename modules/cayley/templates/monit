@@ -1,0 +1,4 @@
+check process cayley with pidfile /var/run/cayley.pid
+	start program = "/etc/init.d/cayley start"
+	stop program  = "/etc/init.d/cayley stop"
+	if failed port 80 protocol http with timeout 10 seconds for 2 cycles then restart
