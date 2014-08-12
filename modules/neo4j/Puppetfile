@@ -1,0 +1,3 @@
+mod 'java7',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
+  :path => 'modules/java7'

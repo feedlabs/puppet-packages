@@ -1,0 +1,3 @@
+mod 'apt',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
+  :path => 'modules/apt'
