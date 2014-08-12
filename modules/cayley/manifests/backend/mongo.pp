@@ -15,8 +15,11 @@ class cayley::backend::mongo (
 
   exec {'init mongodb storage':
     provider => shell,
+    path => ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'],
     command => 'cayley init -config /etc/cayley/cayley.cfg',
     onlyif => "! test -x ${init_file}",
     refreshonly => true,
+    user => 'cayley',
+    require => Class['cayley'],
   }
 }

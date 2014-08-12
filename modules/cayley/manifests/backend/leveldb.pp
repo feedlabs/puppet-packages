@@ -6,16 +6,19 @@ class cayley::backend::leveldb (
 
   file {$db_path:
     ensure => directory,
-    owner => '0',
-    group => '0',
+    owner => 'cayley',
+    group => 'cayley',
     mode => '0644',
   }
   ~>
 
   exec {'init leveldb storage':
     provider => shell,
+    path => ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'],
     command => 'cayley init -config /etc/cayley/cayley.cfg',
     refreshonly => true,
+    user => 'cayley',
+    require => Class['cayley'],
   }
 
 }
