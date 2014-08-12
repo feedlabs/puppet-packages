@@ -1,6 +1,8 @@
 class cayley::backend::mongodb (
-
+  $db_path,
+  $database_name = 'cayley'
 ) {
 
-  $daemon_args = ''
+  # validate db_path
+  # init ?
 }

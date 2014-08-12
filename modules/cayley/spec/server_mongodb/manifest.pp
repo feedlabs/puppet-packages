@@ -1,3 +1,3 @@
-node deafult {
+node default {
 
 }

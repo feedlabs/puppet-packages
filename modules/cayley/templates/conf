@@ -1,0 +1,9 @@
+{
+  "database": "<%= @database %>",
+  "db_path": "<%= @database_path %>",
+  "listen_host": "<%= @bind_ip %>",
+  "listen_port": "<%= @port %>",
+  "load_size": <%= @load_size %>,
+  "timeout": <%= @timeout %>,
+  "db_options": <%= JSON.dump @database_options %>
+}
