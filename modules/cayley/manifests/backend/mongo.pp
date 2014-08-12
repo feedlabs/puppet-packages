@@ -7,8 +7,8 @@ class cayley::backend::mongo (
 
   file {$init_file:
     ensure => file,
-    owner => '0',
-    group => '0',
+    owner => 'cayley',
+    group => 'cayley',
     mode => '0644',
   }
   ~>
@@ -20,6 +20,10 @@ class cayley::backend::mongo (
     onlyif => "! test -x ${init_file}",
     refreshonly => true,
     user => 'cayley',
-    require => Class['cayley'],
+    require => [
+      Class['cayley'],
+      File['/etc/cayley/cayley.cfg'],
+      File[$init_file],
+    ],
   }
 }

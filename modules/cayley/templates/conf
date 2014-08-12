@@ -10,9 +10,9 @@
   <% @database_options.each do |k,v| -%>
     <% options_length = options_length - 1 -%>
     <% if (v.to_s == v.to_i.to_s) -%>
-      "<%= k %>": <%= options_length %><%= ',' if options_length > 0 %>
+      "<%= k %>": <%= v %><%= ',' if options_length > 0 %>
     <% else %>
-      "<%= k %>": "<%= options_length %>"<%= ',' if options_length > 0 %>
+      "<%= k %>": "<%= v %>"<%= ',' if options_length > 0 %>
     <% end -%>
   <% end -%>
   }

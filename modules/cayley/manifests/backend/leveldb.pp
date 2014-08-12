@@ -18,7 +18,7 @@ class cayley::backend::leveldb (
     command => 'cayley init -config /etc/cayley/cayley.cfg',
     refreshonly => true,
     user => 'cayley',
-    require => Class['cayley'],
+    require => [ Class['cayley'], File['/etc/cayley/cayley.cfg'] ],
   }
 
 }
