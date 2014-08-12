@@ -1,0 +1,10 @@
+
+[main]
+masterport = <%= @masterport %>
+[agent]
+server = <%= @server %>
+runinterval = <%= @runinterval %>
+report = true
+usecacheonfailure = false
+splay = <%= @splay %>
+splaylimit = <%= @splaylimit_final %>

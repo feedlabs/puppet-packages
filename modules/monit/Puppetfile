@@ -1,0 +1,5 @@
+# Circular dependency not supported
+#
+#mod 'cargomedia/bipbip',
+#  :git => 'git@github.com:cargomedia/puppet-packages.git',
+#  :path => 'modules/bipbip'

@@ -1,0 +1,9 @@
+logfile: <%= @log_file %>
+loglevel: <%= @log_level %>
+frequency: <%= @frequency %>
+include: services.d/
+
+storages:
+  -
+    name: copperegg
+    api_key: <%= @api_key %>
