@@ -1,2 +1,0 @@
-[mysqld]
-init-file	= /etc/mysql/init.sql

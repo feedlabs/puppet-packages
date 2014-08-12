@@ -1,3 +1,0 @@
-mod 'feedlabs/cgi-fcgi',
-  :git => 'git@github.com:feedlabs/puppet-packages.git',
-  :path => 'modules/cgi-fcgi'

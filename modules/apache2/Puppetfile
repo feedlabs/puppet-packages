@@ -1,3 +1,0 @@
-mod 'feedlabs/monit',
-  :git => 'git@github.com:feedlabs/puppet-packages.git',
-  :path => 'modules/monit'

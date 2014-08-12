@@ -1,3 +1,0 @@
-mod 'feedlabs/augeas',
-  :git => 'git@github.com:feedlabs/puppet-packages.git',
-  :path => 'modules/augeas'

@@ -1,7 +1,0 @@
-mod 'feedlabs/ca-certificates',
-  :git => 'git@github.com:feedlabs/puppet-packages.git',
-  :path => 'modules/ca-certificates'
-
-mod 'feedlabs/monit',
-  :git => 'git@github.com:feedlabs/puppet-packages.git',
-  :path => 'modules/monit'

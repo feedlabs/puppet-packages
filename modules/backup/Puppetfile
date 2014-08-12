@@ -1,7 +1,0 @@
-mod 'feedlabs/rdiff-backup',
-  :git => 'git@github.com:feedlabs/puppet-packages.git',
-  :path => 'modules/rdiff-backup'
-
-mod 'feedlabs/ssh',
-  :git => 'git@github.com:feedlabs/puppet-packages.git',
-  :path => 'modules/ssh'

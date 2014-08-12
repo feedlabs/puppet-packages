@@ -1,4 +1,0 @@
-check process redis with pidfile /var/run/redis.pid
-	start program = "/etc/init.d/redis start"
-	stop  program = "/etc/init.d/redis stop"
-	if failed port 6379 with timeout 10 seconds for 2 cycles then restart
