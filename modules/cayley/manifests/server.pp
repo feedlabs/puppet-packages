@@ -5,4 +5,7 @@ class cayley::server (
   $backend_options = {}
 ) {
 
+  include 'cayley::service'
+
+
 }
