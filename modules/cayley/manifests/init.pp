@@ -16,6 +16,14 @@ class cayley(
   }
   ->
 
+  file {'/etc/cayley/inits':
+    ensure => directory,
+    owner => '0',
+    group => '0',
+    mode => '0644',
+  }
+  ->
+
   file {'/usr/lib/cayley':
     ensure => directory,
     owner => '0',

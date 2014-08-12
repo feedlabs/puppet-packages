@@ -24,7 +24,7 @@ class cayley::server (
   }
 
   case $database {
-    ['mongodb', 'leveldb']: {
+    'mongo', 'leveldb': {
       $defaults = {
         db_path => $database_path
       }
