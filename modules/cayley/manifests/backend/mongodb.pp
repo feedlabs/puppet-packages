@@ -1,8 +1,10 @@
 class cayley::backend::mongodb (
-  $db_path,
-  $database_name = 'cayley'
+  $db_path
 ) {
 
-  # validate db_path
-  # init ?
+  exec {'init mongodb storage':
+    provider => shell,
+    command => 'cayley init -config /etc/cayley/cayley.cfg',
+    refreshonly => true,
+  }
 }

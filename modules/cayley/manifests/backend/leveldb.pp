@@ -1,8 +1,4 @@
-class cayley::backend::leveldb (
-  $db_path,
-  $write_buffer_mb = 20,
-  $cache_size_mb = 2
-) {
+class cayley::backend::leveldb ($db_path) {
 
   file {$db_path:
     ensure => directory,

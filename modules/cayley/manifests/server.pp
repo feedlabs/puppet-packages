@@ -23,8 +23,16 @@ class cayley::server (
     db_options  => $database_options
   }
 
-  $defaults = {
-    db_path => $database_path
+  case $database {
+    ['mongodb', 'leveldb']: {
+      $defaults = {
+        db_path => $database_path
+      }
+    }
+
+    default: {
+      fail("Not supported backend database ${database}")
+    }
   }
 
   $arguments = { "Cayley::Backend::${database}" => $database_options }
