@@ -1,6 +1,9 @@
 node default {
 
   class {'feedify::server-dev':
-    repo => '/vagrant/feedify'
+    source => '/vagrant/modules/feedify/files/test',
+    main_script => 'index.go',
+    install_script => 'install.sh',
   }
+
 }
