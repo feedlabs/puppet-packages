@@ -1,0 +1,19 @@
+{
+  "database": "<%= @database %>",
+  "db_path": "<%= @database_path %>",
+  "listen_host": "<%= @bind_ip %>",
+  "listen_port": "<%= @port %>",
+  "load_size": <%= @load_size %>,
+  "timeout": <%= @timeout %>,
+  "db_options": {
+  <% options_length = @database_options.length -%>
+  <% @database_options.each do |k,v| -%>
+    <% options_length = options_length - 1 -%>
+    <% if (v.to_s == v.to_i.to_s) -%>
+      "<%= k %>": <%= v %><%= ',' if options_length > 0 %>
+    <% else %>
+      "<%= k %>": "<%= v %>"<%= ',' if options_length > 0 %>
+    <% end -%>
+  <% end -%>
+  }
+}
