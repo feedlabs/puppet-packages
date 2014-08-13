@@ -10,6 +10,3 @@ fi
 
 ln -s /usr/local/go/bin/go /usr/bin/go
 
-echo 'export GOROOT=/usr/local/go' >> /etc/golang
-echo 'export GOPATH=<%= @gopath %>' >> /etc/golang
-echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/golang
