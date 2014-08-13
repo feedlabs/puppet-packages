@@ -19,10 +19,6 @@ describe service('cayleyd') do
   it { should be_monitored_by('monit') }
 end
 
-describe command("mongo cayley --quiet --eval 'printjson(db.getCollectionNames())'") do
-  its(:stdout) { should match /system.indexes/ }
-end
-
 describe command('curl -XPOST -d \'[{"subject":"subject","predicate":"predicate","object":"object"}]\' localhost:64210/api/v1/write') do
   its(:stdout) { should match /Successfully wrote 1 triples/ }
 end
@@ -31,4 +27,8 @@ describe command('curl -XPOST -d "graph.Vertex().All()" localhost:64210/api/v1/q
   its(:stdout) { should match /"id": "subject"/ }
   its(:stdout) { should match /"id": "predicate"/ }
   its(:stdout) { should match /"id": "object"/ }
+end
+
+describe command("mongo cayley --quiet --eval 'printjson(db.getCollectionNames())'") do
+  its(:stdout) { should match /system.indexes/ }
 end
