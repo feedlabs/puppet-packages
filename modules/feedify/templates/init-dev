@@ -32,7 +32,7 @@ case "${1}" in
 		$GOCOMPILE $SCRIPT_PATH
 		DAEMON="$PWD/index"
 
-    log_daemon_msg "Starting ${DESC}" "${NAME}"
+		log_daemon_msg "Starting ${DESC}" "${NAME}"
 		if (start-stop-daemon --start --startas $DAEMON --pidfile $PIDFILE --make-pidfile --background --chuid $USER -- $DAEMON_ARGS); then
 			log_end_msg 0
 		else
