@@ -1,0 +1,63 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:				feedify
+# Required-Start:		$syslog
+# Required-Stop:		$syslog
+# Default-Start:		2 3 4 5
+# Default-Stop:			0 1 6
+# Short-Description:	feedify
+# Description:			Gather services data and store in CopperEgg
+### END INIT INFO
+
+NAME=feedify
+DESC=feedify
+PIDFILE=/var/run/feedify.pid
+GOCOMPILE="/usr/bin/go build"
+DAEMON_ARGS="<%= @daemon_args %>"
+SCRIPT_PATH="<%= @go_script %>"
+USER=root
+
+set -e
+. /lib/lsb/init-functions
+
+
+case "${1}" in
+	start)
+		export GOPATH="<%= @go_path %>"
+		PWD=$(mktemp -d)
+		cd $PWD
+
+		log_daemon_msg "Compiling ${SCRIPT_PATH}"
+		$GOCOMPILE $SCRIPT_PATH
+		DAEMON="$PWD/index"
+
+		log_daemon_msg "Starting ${DESC}" "${NAME}"
+		if (start-stop-daemon --start --startas $DAEMON --pidfile $PIDFILE --make-pidfile --background --chuid $USER -- $DAEMON_ARGS); then
+			log_end_msg 0
+		else
+			log_end_msg 1
+		fi
+	;;
+	stop)
+		log_daemon_msg "Stopping ${DESC}" "${NAME}"
+		if (start-stop-daemon --stop --oknodo --retry 20 --pidfile $PIDFILE --user $USER); then
+			rm -f $PIDFILE
+			log_end_msg 0
+		else
+			log_end_msg 1
+		fi
+	;;
+	status)
+		status_of_proc -p ${PIDFILE} ${DAEMON} ${NAME}
+	;;
+	restart)
+		${0} stop
+		${0} start
+	;;
+	*)
+		echo "Usage: ${0} {start|stop|status|restart}" >&2
+	;;
+esac
+
+exit 0

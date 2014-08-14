@@ -1,0 +1,4 @@
+check process feedify with pidfile /var/run/feedify.pid
+	start program = "/etc/init.d/feedify start"
+	stop program  = "/etc/init.d/feedify stop"
+	if failed port <%= @port %> protocol http with timeout 10 seconds for 2 cycles then restart
