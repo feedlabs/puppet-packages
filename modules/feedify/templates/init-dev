@@ -12,20 +12,27 @@
 
 NAME=feedify
 DESC=feedify
-DAEMON=/usr/bin/go
 PIDFILE=/var/run/feedify.pid
+GOCOMPILE="/usr/bin/go build"
 DAEMON_ARGS="<%= @daemon_args %>"
-USER=feedify
+SCRIPT_PATH=<%= @source %>/<%= @main_script %>
+USER=root
 
-test -x ${DAEMON} || exit 0
 set -e
 . /lib/lsb/init-functions
 
 
 case "${1}" in
 	start)
-		log_daemon_msg "Starting ${DESC}" "${NAME}"
 		export GOPATH="<%= @gopath %>"
+		PWD=$(mktemp -d)
+		cd $PWD
+
+		log_daemon_msg "Compiling ${SCRIPT_PATH}"
+		$GOCOMPILE $SCRIPT_PATH
+		DAEMON="$PWD/index"
+
+    log_daemon_msg "Starting ${DESC}" "${NAME}"
 		if (start-stop-daemon --start --startas $DAEMON --pidfile $PIDFILE --make-pidfile --background --chuid $USER -- $DAEMON_ARGS); then
 			log_end_msg 0
 		else

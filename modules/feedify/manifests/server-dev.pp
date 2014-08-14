@@ -8,7 +8,7 @@ class feedify::server-dev (
   include 'feedify::service'
 
   $gopath = '/home/feedify/go'
-  $daemon_args = "run ${source}/${main_script}"
+  $daemon_args = "-config=''"
 
   class {'golang':
     version => '1.2',
@@ -17,7 +17,7 @@ class feedify::server-dev (
   }
   ->
 
-  helper::script {'install cayley':
+  helper::script {'setup and install feedify environment':
     content => template('feedify/setup.sh'),
     unless => " ! test -e ${source}/${install_script} "
   }
