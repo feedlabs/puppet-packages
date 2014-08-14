@@ -1,25 +1,24 @@
 class feedify::server-dev (
   $source,
-  $main_script = 'main.go',
-  $install_script = 'install-dev.sh',
+  $go_script = 'main.go',
+  $go_path = '/home/feedify/go',
+  $install_script = 'install.sh',
+  $daemon_args = '',
   $port = '8080'
 ) {
 
   include 'feedify::service'
 
-  $gopath = '/home/feedify/go'
-  $daemon_args = "-config=''"
-
   class {'golang':
     version => '1.2',
-    gopath => $gopath,
+    gopath => $go_path,
     require => User['feedify'],
   }
   ->
 
-  helper::script {'setup and install feedify environment':
+  helper::script {'install and setup feedify environment':
     content => template('feedify/setup.sh'),
-    unless => " ! test -e ${source}/${install_script} "
+    unless => " ! test -e ${install_script} "
   }
   ->
 

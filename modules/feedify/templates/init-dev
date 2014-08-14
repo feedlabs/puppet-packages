@@ -15,7 +15,7 @@ DESC=feedify
 PIDFILE=/var/run/feedify.pid
 GOCOMPILE="/usr/bin/go build"
 DAEMON_ARGS="<%= @daemon_args %>"
-SCRIPT_PATH=<%= @source %>/<%= @main_script %>
+SCRIPT_PATH="<%= @go_script %>"
 USER=root
 
 set -e
@@ -24,7 +24,7 @@ set -e
 
 case "${1}" in
 	start)
-		export GOPATH="<%= @gopath %>"
+		export GOPATH="<%= @go_path %>"
 		PWD=$(mktemp -d)
 		cd $PWD
 

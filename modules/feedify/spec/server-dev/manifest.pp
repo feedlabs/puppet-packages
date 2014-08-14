@@ -1,9 +1,11 @@
 node default {
 
+  $source_path = '/vagrant/modules/feedify/files/test'
+
   class {'feedify::server-dev':
-    source => '/vagrant/modules/feedify/files/test',
-    main_script => 'index.go',
-    install_script => 'install.sh',
+    source => $source_path,
+    go_script => "${source_path}/index.go",
+    install_script => "${source_path}/install.sh",
   }
 
 }
