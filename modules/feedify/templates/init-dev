@@ -30,7 +30,9 @@ case "${1}" in
 
 		log_daemon_msg "Compiling ${SCRIPT_PATH}"
 		$GOCOMPILE $SCRIPT_PATH
-		DAEMON="$PWD/index"
+
+		BIN_NAME=$(basename $SCRIPT_PATH .go)
+		DAEMON="$PWD/$BIN_NAME"
 
 		log_daemon_msg "Starting ${DESC}" "${NAME}"
 		if (start-stop-daemon --start --startas $DAEMON --pidfile $PIDFILE --make-pidfile --background --chuid $USER -- $DAEMON_ARGS); then

@@ -1,13 +1,14 @@
 class feedify::server-dev (
   $source,
+  $port = 9090,
   $go_script = 'main.go',
   $go_path = '/home/feedify/go',
-  $install_script = 'install.sh',
-  $daemon_args = '',
-  $port = '8080'
+  $install_script = 'install.sh'
 ) {
 
   include 'feedify::service'
+
+  $daemon_args = "--port ${port}"
 
   class {'golang':
     version => '1.2',
