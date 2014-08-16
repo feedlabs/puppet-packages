@@ -7,7 +7,7 @@ class feedify {
   }
   ->
 
-  file {'/home/feedify':
+  file {['/home/feedify', '/etc/feedify']:
     ensure => directory,
     owner => '0',
     group => '0',
