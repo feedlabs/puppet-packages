@@ -1,0 +1,7 @@
+appname=feedify
+runmode=dev
+autorender=false
+copyrequestbody=true
+
+[feedify]
+port=<%= @port @>
