@@ -10,7 +10,7 @@ go get github.com/astaxie/beego
 
 # development dependencies install
 chmod +x <%= @install_script %>
-. <%= @install_script %>
+. <%= @install_script %> <%= @go_path %> <%= @source %>
 
 # link bee tool to global path
 if [ -e /usr/bin/bee ]; then
