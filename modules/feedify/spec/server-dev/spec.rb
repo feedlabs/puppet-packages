@@ -19,3 +19,7 @@ end
 describe port(10100) do
   it { should be_listening }
 end
+
+describe file('/etc/feedify/feedify.conf') do
+  it { should be_file }
+end
