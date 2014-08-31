@@ -11,7 +11,7 @@ class feedify::server-dev (
   $daemon_args = "--config /etc/feedify/feedify.conf --port ${port}"
 
   class {'golang':
-    version => '1.2',
+    version => '1.3.1',
     gopath => $go_path,
     require => User['feedify'],
   }
