@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-curl -sL https://go.googlecode.com/files/go<%= @version %>.linux-amd64.tar.gz > go.tar.gz
+curl -sL https://storage.googleapis.com/golang/go<%= @version %>.linux-amd64.tar.gz > go.tar.gz
 tar -xvf go.tar.gz
 cp -R go /usr/local/
 

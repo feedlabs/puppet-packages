@@ -1,7 +1,10 @@
 class golang(
-  $version = '1.2',
+  $version = '1.3.1',
   $gopath = '/root/go'
 ) {
+
+  # install SVN, Mercurial, Git
+  # install packages?
 
   file {$gopath:
     ensure => directory,
