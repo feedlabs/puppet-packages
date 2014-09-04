@@ -1,5 +1,8 @@
 node default {
 
-  class { 'neo4j': }
+  require 'monit'
+
+  class {'neo4j':
+  }
 
 }
