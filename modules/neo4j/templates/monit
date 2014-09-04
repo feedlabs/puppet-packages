@@ -1,0 +1,4 @@
+check process neo4j-service with pidfile /var/run/neo4j.pid
+	start program = "/etc/init.d/neo4j-service start"
+	stop program  = "/etc/init.d/neo4j-service stop"
+	if failed port <%= @port %> protocol http with timeout 10 seconds for 2 cycles then restart

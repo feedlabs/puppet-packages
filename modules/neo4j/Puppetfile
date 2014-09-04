@@ -1,3 +1,11 @@
-mod 'java7',
+mod 'feedlabs/java7',
   :git => 'git@github.com:feedlabs/puppet-packages.git',
   :path => 'modules/java7'
+
+mod 'feedlabs/monit',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
+  :path => 'modules/monit
+
+mod 'feedlabs/apt',
+  :git => 'git@github.com:feedlabs/puppet-packages.git',
+  :path => 'modules/apt''
