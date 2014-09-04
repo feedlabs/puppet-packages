@@ -1,5 +1,6 @@
 class neo4j (
-  $port = 7474
+  $port = 7474,
+  $bind_ip = '0.0.0.0'
 ){
 
   require 'java7'
