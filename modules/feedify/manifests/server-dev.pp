@@ -10,18 +10,9 @@ define feedify::server-dev (
 
   $daemon_args = "--config /etc/feedify/feedify-${name}.conf --port ${port}"
 
-  feedify::service {$name: }
-
-  class {'golang':
-    version => '1.3.1',
-    gopath => $go_path,
-    require => User['feedify'],
-  }
-  ->
-
-  helper::script {'install and setup feedify environment':
-    content => template('feedify/setup.sh'),
-    unless => " ! test -e ${install_script} ",
+  feedify::dev {$name:
+    go_path => $go_path,
+    install_script => $install_script,
   }
   ->
 
@@ -43,6 +34,8 @@ define feedify::server-dev (
     mode => '0755',
     notify => Service["feedify-${name}"],
   }
+
+  feedify::service {$name: }
 
   @monit::entry {"feedify-${name}":
     content => template('feedify/monit'),
