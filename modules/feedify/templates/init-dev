@@ -12,7 +12,7 @@
 
 NAME=feedify
 DESC=feedify
-PIDFILE=/var/run/feedify.pid
+PIDFILE=/var/run/feedify-<%= @name %>.pid
 GOCOMPILE="/usr/bin/go build"
 DAEMON_ARGS="<%= @daemon_args %>"
 SCRIPT_PATH="<%= @go_script %>"
