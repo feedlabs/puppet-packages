@@ -1,8 +1,8 @@
 define golang::dev (
-  $go_path = $name
+  $go_path
 ) {
 
-  file {$name:
+  file {"create gopath dir for ${name}":
     path => $go_path,
     ensure => directory,
     mode => 0644,
@@ -11,7 +11,8 @@ define golang::dev (
   }
   ->
 
-  file {'/etc/profile.d/golang.sh':
+  file {"create golang profile for ${name}":
+    path => "/etc/profile.d/golang-${name}.sh"
     ensure => file,
     content => template('golang/profile'),
     mode => 0644,
