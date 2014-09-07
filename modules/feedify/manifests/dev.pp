@@ -3,9 +3,9 @@ define feedify::dev (
   $install_script
 ) {
 
-  class {'golang':
-    version => '1.3.1',
-    gopath => $go_path,
+  require 'golang'
+
+  golang::dev {$go_path:
     require => User['feedify'],
   }
   ->
@@ -14,4 +14,5 @@ define feedify::dev (
     content => template('feedify/setup.sh'),
     unless => " ! test -e ${install_script} ",
   }
+
 }
