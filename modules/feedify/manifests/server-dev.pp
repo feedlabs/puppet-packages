@@ -10,9 +10,7 @@ define feedify::server-dev (
 
   $daemon_args = "--config /etc/feedify/feedify-${name}.conf --port ${port}"
 
-  class {'feedify::service':
-    name => $name,
-  }
+  feedify::service {$name: }
 
   class {'golang':
     version => '1.3.1',

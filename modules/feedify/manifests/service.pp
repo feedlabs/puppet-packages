@@ -1,4 +1,4 @@
-class feedify::service ($name) {
+define feedify::service {
 
   include 'feedify'
 
