@@ -11,7 +11,7 @@ define feedify::dev (
   }
   ->
 
-  helper::script {'install and setup feedify environment':
+  helper::script {"install ${name}":
     content => template('feedify/setup.sh'),
     unless => " ! test -e ${install_script} ",
   }
