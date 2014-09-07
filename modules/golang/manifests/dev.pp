@@ -1,5 +1,5 @@
 define golang::dev (
-  $gopath = $name
+  $go_path = $name
 ) {
 
   file {$gopath:
