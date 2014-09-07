@@ -1,5 +1,5 @@
 define feedify::dev (
-	$go_path,
+  $go_path,
   $install_script
 ) {
 
