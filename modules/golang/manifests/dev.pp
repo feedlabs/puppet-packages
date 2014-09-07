@@ -12,7 +12,7 @@ define golang::dev (
   ->
 
   file {"create golang profile for ${name}":
-    path => "/etc/profile.d/golang-${name}.sh"
+    path => "/etc/profile.d/golang-${name}.sh",
     ensure => file,
     content => template('golang/profile'),
     mode => 0644,
