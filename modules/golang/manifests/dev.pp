@@ -2,7 +2,7 @@ define golang::dev (
   $go_path = $name
 ) {
 
-  file {$gopath:
+  file {$go_path:
     ensure => directory,
     mode => 0644,
     owner => 0,
