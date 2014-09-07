@@ -5,7 +5,8 @@ define feedify::dev (
 
   require 'golang'
 
-  golang::dev {$go_path:
+  golang::dev {"${go_path}-${name}":
+    go_path => $go_path,
     require => User['feedify'],
   }
   ->
