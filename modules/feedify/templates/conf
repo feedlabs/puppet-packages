@@ -10,6 +10,7 @@ port=<%= @port %>
 cache=memcache
 graph=neo4j
 stream=stream
+js=otto
 
 [redis]
 host=localhost
