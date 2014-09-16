@@ -8,7 +8,7 @@ port=<%= @port %>
 
 [service]
 cache=memcache
-graph=neo4j
+graph=graph
 stream=stream
 js=otto
 
@@ -23,4 +23,11 @@ message_adapter=socket_redis
 [neo4j]
 host=localhost
 port=7474
-adapter=cypher
+db=db/data
+
+[memcache]
+host=localhost
+port=11211
+
+[graph]
+storage_adapter=neo4j_cypher
